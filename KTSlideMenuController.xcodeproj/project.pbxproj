@@ -15,6 +15,7 @@
 		38E9C4C815BE588100BCAD96 /* KTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9C4C715BE588100BCAD96 /* KTAppDelegate.m */; };
 		38E9C4CB15BE588100BCAD96 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E9C4C915BE588100BCAD96 /* MainStoryboard.storyboard */; };
 		38E9C4CE15BE588100BCAD96 /* KTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9C4CD15BE588100BCAD96 /* KTViewController.m */; };
+		38E9C4D615BE593300BCAD96 /* KTMenuTalbeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9C4D515BE593300BCAD96 /* KTMenuTalbeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		38E9C4B715BE588100BCAD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		38E9C4B915BE588100BCAD96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		38E9C4BB15BE588100BCAD96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		38E9C4BF15BE588100BCAD96 /* KTSlideMenuController-Info.plist */ = {isa = PBXFileReference; path = "KTSlideMenuController-Info.plist"; sourceTree = "<group>"; };
+		38E9C4BF15BE588100BCAD96 /* KTSlideMenuController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KTSlideMenuController-Info.plist"; sourceTree = "<group>"; };
 		38E9C4C115BE588100BCAD96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		38E9C4C315BE588100BCAD96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		38E9C4C515BE588100BCAD96 /* KTSlideMenuController-Prefix.pch */ = {isa = PBXFileReference; path = "KTSlideMenuController-Prefix.pch"; sourceTree = "<group>"; };
-		38E9C4C615BE588100BCAD96 /* KTAppDelegate.h */ = {isa = PBXFileReference; path = KTAppDelegate.h; sourceTree = "<group>"; };
+		38E9C4C515BE588100BCAD96 /* KTSlideMenuController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KTSlideMenuController-Prefix.pch"; sourceTree = "<group>"; };
+		38E9C4C615BE588100BCAD96 /* KTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTAppDelegate.h; sourceTree = "<group>"; };
 		38E9C4C715BE588100BCAD96 /* KTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppDelegate.m; sourceTree = "<group>"; };
 		38E9C4CA15BE588100BCAD96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		38E9C4CC15BE588100BCAD96 /* KTViewController.h */ = {isa = PBXFileReference; path = KTViewController.h; sourceTree = "<group>"; };
+		38E9C4CC15BE588100BCAD96 /* KTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTViewController.h; sourceTree = "<group>"; };
 		38E9C4CD15BE588100BCAD96 /* KTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTViewController.m; sourceTree = "<group>"; };
+		38E9C4D415BE593300BCAD96 /* KTMenuTalbeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMenuTalbeViewController.h; sourceTree = "<group>"; };
+		38E9C4D515BE593300BCAD96 /* KTMenuTalbeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMenuTalbeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				38E9C4C915BE588100BCAD96 /* MainStoryboard.storyboard */,
 				38E9C4CC15BE588100BCAD96 /* KTViewController.h */,
 				38E9C4CD15BE588100BCAD96 /* KTViewController.m */,
+				38E9C4D415BE593300BCAD96 /* KTMenuTalbeViewController.h */,
+				38E9C4D515BE593300BCAD96 /* KTMenuTalbeViewController.m */,
 				38E9C4BE15BE588100BCAD96 /* Supporting Files */,
 			);
 			path = KTSlideMenuController;
@@ -165,6 +170,7 @@
 				38E9C4C415BE588100BCAD96 /* main.m in Sources */,
 				38E9C4C815BE588100BCAD96 /* KTAppDelegate.m in Sources */,
 				38E9C4CE15BE588100BCAD96 /* KTViewController.m in Sources */,
+				38E9C4D615BE593300BCAD96 /* KTMenuTalbeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +282,7 @@
 				38E9C4D315BE588100BCAD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

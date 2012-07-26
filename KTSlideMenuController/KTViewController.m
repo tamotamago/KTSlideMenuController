@@ -7,7 +7,6 @@
 //
 
 #import "KTViewController.h"
-#import "KTMenuTalbeViewController.h"
 
 @interface KTViewController ()
 
@@ -27,14 +26,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    KTMenuTalbeViewController *menuTableViewController = 
+    //menu table view
+    UITableViewController *menuTableViewController = 
     [self.storyboard instantiateViewControllerWithIdentifier:@"KTMenuTalbeViewController"];
+    menuTableViewController.tableView.delegate = self;
     [menuTableViewController.view setFrame:_dummyView.frame];
-    
     [self addChildViewController:menuTableViewController];
     [menuTableViewController didMoveToParentViewController:self];
     [self.view addSubview:menuTableViewController.view];
+    
+    //navigationController
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    [self addChildViewController:navigationController];
+    [navigationController didMoveToParentViewController:self];
+    [self.view addSubview:navigationController.view];
     
     UIViewController *viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController1"];
     [self setFirstViewController:viewController1];
@@ -54,22 +59,36 @@
 #pragma mark - setFirstViewController
 -(void)setFirstViewController:(UIViewController *)viewController
 {
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] 
                                           initWithTitle:@"menu" 
                                           style:UIBarButtonItemStylePlain 
                                           target:self 
                                           action:@selector(slide:)];
     [viewController.navigationItem setLeftBarButtonItem:leftBarButtonItem];
-    //[navigationController.navigationItem setLeftBarButtonItem:leftBarButtonItem];
-    [self addChildViewController:navigationController];
-    [navigationController didMoveToParentViewController:self];
-    [self.view addSubview:navigationController.view];
+    UINavigationController *navigationController = [self.childViewControllers lastObject];
+    [navigationController setViewControllers:[NSArray arrayWithObjects:viewController, nil]];
 }
 
 -(void)removeFirstViewController
 {
+    UINavigationController *navigationController = [self.childViewControllers lastObject];
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:navigationController.viewControllers];
+    [viewControllers removeAllObjects];
+    navigationController.viewControllers = viewControllers;
+    //[navigationController.view removeFromSuperview];
+}
 
+#pragma mark - UITableViewControllerDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%d, %d", indexPath.section, indexPath.row);
+    [self removeFirstViewController];
+    if(indexPath.row == 0){
+        [self setFirstViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController1"]];
+    }else if (indexPath.row == 1){
+        [self setFirstViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ViewController2"]];
+    }
+    [self slide:nil];
 }
 
 #pragma mark - slide

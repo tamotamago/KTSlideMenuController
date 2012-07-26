@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface KTViewController : UIViewController
+<UITableViewDelegate>
 
 @end

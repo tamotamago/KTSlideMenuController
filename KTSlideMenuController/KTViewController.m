@@ -75,7 +75,6 @@
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:navigationController.viewControllers];
     [viewControllers removeAllObjects];
     navigationController.viewControllers = viewControllers;
-    //[navigationController.view removeFromSuperview];
 }
 
 #pragma mark - UITableViewControllerDelegate
